@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <header className="py-6">
+    <header className="fixed top-0 right-0 left-0 z-100 py-6 bg-background opacity-85">
       <div className="container mx-auto flex justify-between items-center px-14 lg:px-32  w-full">
         <HeaderLogo />
         <DesktopNavigation stateAndToggle={[isOpen, toggle]} />
