@@ -8,7 +8,8 @@ const FallingPetal = () => {
     <motion.img
       src="/images/petal.png" // publicフォルダに配置した花びらの画像パス
       alt="Flower Petal"
-      initial={{ y: -60, opacity: 0 }}
+      className="z-0"
+      initial={{ y: -50, opacity: 0 }}
       animate={{
         y: '15vh', // 画面下まで落ちる
         opacity: [1, 1, 1, 0],
@@ -22,10 +23,10 @@ const FallingPetal = () => {
       }}
       style={{
         position: 'absolute',
-        zIndex: -7,
+        zIndex: -60,
         width: '50px',
         height: '50px',
-        left: `10%`,
+        left: `20%`,
         transform: 'translateX(-50%)',
       }}
     />

@@ -14,9 +14,9 @@ const MobileNavigation = ({ stateAndToggle }: HumbergerProps) => {
     <>
       {isOpen && (
         <motion.nav
-          className="z-0 fixed top-0 left-0 w-full bg-white text-center text-xl md:text-2xl lg:text-2xl font-bold text-black"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="z-0 fixed top-0 left-0 w-full h-screen  bg-white text-center text-xl md:text-2xl lg:text-2xl font-bold text-black"
+          initial={{ y: ' -100%' }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <button className="fixed top-6 right-14 " onClick={toggle}>
@@ -25,7 +25,7 @@ const MobileNavigation = ({ stateAndToggle }: HumbergerProps) => {
               className="text-black hover:text-red-300 transition-all duration-300"
             />
           </button>
-          <ul className="space-y-12 my-16">
+          <ul className="space-y-14 my-32">
             <li>
               <Link
                 href="#home"
@@ -55,11 +55,11 @@ const MobileNavigation = ({ stateAndToggle }: HumbergerProps) => {
             </li>
             <li>
               <Link
-                href="#"
+                href="#contact"
                 className="hover:text-red-300 transition-all duration-300"
                 onClick={toggle}
               >
-                ブログ
+                お問い合わせ
               </Link>
             </li>
           </ul>

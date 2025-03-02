@@ -30,10 +30,10 @@ const DesktopNavigation = ({ stateAndToggle }: HumbergerProps) => {
           スキル
         </Link>
         <Link
-          href="#"
+          href="#contact"
           className="hover:text-red-300 transition-all duration-300"
         >
-          ブログ
+          お問い合わせ
         </Link>
       </nav>
       <button className="md:hidden z-10" onClick={toggle}>
