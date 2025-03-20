@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
+import { works } from '@/config/works';
 
 const Works = () => {
   return (
@@ -24,58 +25,27 @@ const Works = () => {
             </div>
           </div>
           <div className="order-2 grid md:grid-cols-2 gap-6  lg:gap-12 mt-12 md:mt-0">
-            <Link
-              href={'https://github.com/kami-kai0811'}
-              className="text-center hover:text-red-300 transition-all duration-300"
-            >
-              <Image
-                src="/images/portfolio1.jpg"
-                alt="作品1"
-                width={500}
-                height={500}
-                className="cursor-pointer w-full h-48 md:h-60 lg:h-72 object-cover rounded-md hover:scale-110 duration-300"
-              />
-              <p className=" my-6">作品1</p>
-            </Link>
-            <Link
-              href={'https://github.com/kami-kai0811'}
-              className="text-center hover:text-red-300 transition-all duration-300 "
-            >
-              <Image
-                src="/images/portfolio2.jpg"
-                alt="作品2"
-                width={600}
-                height={600}
-                className="cursor-pointer w-full h-48 md:h-60 lg:h-72 object-cover rounded-md hover:scale-110 duration-300"
-              />
-              <p className=" mt-6">作品2</p>
-            </Link>
-            <Link
-              href={'https://github.com/kami-kai0811'}
-              className="text-center hover:text-red-300 transition-all duration-300"
-            >
-              <Image
-                src="/images/portfolio3.jpg"
-                alt="作品3"
-                width={600}
-                height={600}
-                className="cursor-pointer w-full h-48 md:h-60 lg:h-72 object-cover rounded-md hover:scale-110 duration-300"
-              />
-              <p className=" my-6">作品3</p>
-            </Link>
-            <Link
-              href={'https://github.com/kami-kai0811'}
-              className="text-center hover:text-red-300 transition-all duration-300"
-            >
-              <Image
-                src="/images/portfolio3.jpg"
-                alt="作品4"
-                width={600}
-                height={600}
-                className="cursor-pointer w-full h-48 md:h-60 lg:h-72 object-cover rounded-md hover:scale-110 duration-300"
-              />
-              <p className=" my-6">作品4</p>
-            </Link>
+            {works.map((work, index) => {
+              return (
+                <Link
+                  href={work.href}
+                  className="text-center hover:text-red-300 transition-all duration-300 bg-slate-800 rounded-md hover:scale-110 flex flex-col gap-3"
+                  key={index}
+                >
+                  <Image
+                    src={work.image}
+                    alt={work.title}
+                    width={500}
+                    height={500}
+                    className="cursor-pointer w-full h-48 md:h-60 lg:h-72 object-cover rounded-md "
+                  />
+                  <div className="flex flex-col gap-3 pb-3">
+                    <p>{work.title}</p>
+                    <p>{work.description}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
