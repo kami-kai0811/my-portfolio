@@ -6,13 +6,15 @@ export async function POST(request: Request) {
     const { name, email, message } = await request.json();
 
     const transporter = nodemailer.createTransport({
-      host: process.env.GMAIL_HOST, // 例: "smtp.gmail.com"
-      port: Number(process.env.GMAIL_PORT), // 例: 465 または 587
-      secure: Number(process.env.GMAIL_PORT) === 465, // ポート465なら secure:true
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_PASSWORD,
       },
+      debug: true,
+      logger: true,
     });
 
     const mailData = {

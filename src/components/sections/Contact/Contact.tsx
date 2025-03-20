@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { AiOutlineLoading } from 'react-icons/ai';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,10 +10,13 @@ const Contact = () => {
     message: '',
   });
 
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [showSuccess, setShowSuccess] = useState<boolean>(false);
+  const [isSending, setIsSending] = useState<boolean>(false);
 
   const submitHundle = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSending(true);
+
     setFormData({ name: '', email: '', message: '' });
 
     const accept = await fetch('/api/contact', {
@@ -23,9 +27,8 @@ const Contact = () => {
       },
       body: JSON.stringify(formData),
     });
-
+    setIsSending(false);
     const result = await accept.json();
-    console.log(result);
 
     if (result.ok) {
       setShowSuccess(true);
@@ -91,7 +94,11 @@ const Contact = () => {
               ></textarea>
             </div>
             <button className="px-8 py-3 bg-red-300 font-bold rounded-lg hover:scale-125 transition-all duration-300 mt-10">
-              <span>送信する</span>
+              {isSending ? (
+                <AiOutlineLoading className="animate-spin" />
+              ) : (
+                <span>送信する</span>
+              )}
             </button>
           </form>
         </div>
