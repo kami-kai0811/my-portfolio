@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { FaJs } from 'react-icons/fa';
 import { FaPython } from 'react-icons/fa';
 import { FaHtml5 } from 'react-icons/fa';

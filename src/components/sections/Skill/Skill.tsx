@@ -1,7 +1,5 @@
 import React from 'react';
 import Languages from './Languages';
-import Image from 'next/image';
-import Link from 'next/link';
 
 const Skill = () => {
   return (

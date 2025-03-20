@@ -7,6 +7,7 @@ const poppins = Poppins({
   weight: '400', // 通常のウェイトを指定
   display: 'swap', // フォントの読み込みが完了するまでフォールバックフォントを表示
   fallback: ['sans-serif'], // フォールバックとしてシステムの sans-serif を指定
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
