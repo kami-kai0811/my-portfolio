@@ -31,6 +31,8 @@ const Works = () => {
                   href={work.href}
                   className="text-center hover:text-red-300 transition-all duration-300 bg-slate-800 rounded-md hover:scale-110 flex flex-col gap-3"
                   key={index}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <Image
                     src={work.image}
