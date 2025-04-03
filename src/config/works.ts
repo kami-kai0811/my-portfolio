@@ -17,4 +17,10 @@ export const works = [
     href: 'https://to-md.vercel.app/',
     image: '/images/portfolio3.png',
   },
+  {
+    title: 'Apple Checker',
+    description: 'リンゴが「食べ頃」か「傷んでいる」かを判定します。',
+    href: 'https://fresh-or-rotten-a4bdf2469776.herokuapp.com/',
+    image: '/images/portfolio4.png',
+  },
 ];
