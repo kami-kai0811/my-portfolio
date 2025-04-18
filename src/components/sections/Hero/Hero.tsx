@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <motion.section
       id="home"
-      className="container mt-32 flex flex-col md:flex-row md:flex-nowrap mx-auto px-14 lg:px-32 w-full"
+      className="container mt-32 flex flex-col md:flex-row md:flex-nowrap mx-auto px-14 lg:px-32 w-full pb-48"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 4.0 }}
